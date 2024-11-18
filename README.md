@@ -24,15 +24,10 @@ Before running this app locally, ensure that you have the following software ins
 Install Backend Dependencies
 
 Navigate to the backend folder (or the root folder if the backend is there) and install the necessary dependencies:
-
    ```bash
    npm install
 
-Start the Backend Server
 
-# Run the server with the following command:
 
-    ```bash
-    node server.js
 
 
