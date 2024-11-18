@@ -1,0 +1,10 @@
+{"name":"Apple Juice","price":5.5,"expiryDate":1732492800000,"stock":50,"sales":120,"days_to_expiry":6,"predicted_category":"A"}
+{"name":"Orange Juice","price":4.0,"expiryDate":1733788800000,"stock":30,"sales":80,"days_to_expiry":21,"predicted_category":"A"}
+{"name":"Banana Chips","price":2.5,"expiryDate":1732924800000,"stock":100,"sales":150,"days_to_expiry":11,"predicted_category":"A"}
+{"name":"Milk","price":3.0,"expiryDate":1732060800000,"stock":20,"sales":200,"days_to_expiry":1,"predicted_category":"C"}
+{"name":"Almonds","price":8.0,"expiryDate":1747267200000,"stock":150,"sales":50,"days_to_expiry":177,"predicted_category":"B"}
+{"name":"Cashews","price":7.5,"expiryDate":1736467200000,"stock":80,"sales":60,"days_to_expiry":52,"predicted_category":"C"}
+{"name":"Whole Wheat Bread","price":3.5,"expiryDate":1732233600000,"stock":120,"sales":170,"days_to_expiry":3,"predicted_category":"A"}
+{"name":"Rice","price":2.0,"expiryDate":1748736000000,"stock":300,"sales":500,"days_to_expiry":194,"predicted_category":"C"}
+{"name":"Spaghetti","price":1.5,"expiryDate":1751328000000,"stock":200,"sales":100,"days_to_expiry":224,"predicted_category":"C"}
+{"name":"Cheese","price":6.0,"expiryDate":1732752000000,"stock":40,"sales":90,"days_to_expiry":9,"predicted_category":"A"}
