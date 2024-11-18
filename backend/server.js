@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 const QRCode = require("qrcode");
-const Product = require("./Product");
+const Product = require("./models/Product");
 
 const app = express();
 
@@ -30,20 +30,54 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Calculate discount based on expiry date
+// Determine Category Based on Sales Velocity
+const getCategory = (product) => {
+  // Example assumptions:
+  // - Fast-Selling if sold more than 500 units in a month
+  // - Moderate-Selling if sold between 100 and 500 units
+  // - Slow-Selling if sold less than 100 units
+
+  if (product.salesVelocity > 500) {
+    return "A"; // Category A (Critical)
+  } else if (product.salesVelocity > 100) {
+    return "B"; // Category B (Moderate)
+  } else {
+    return "C"; // Category C (Low Priority)
+  }
+};
+
+// Calculate Discount Based on Category and Expiry Date
 const calculateDiscount = (product) => {
+  const category = getCategory(product);
   const expiryDate = new Date(product.expiryDate);
   const currentDate = new Date();
   const timeDiff = expiryDate - currentDate;
   const daysToExpiry = Math.floor(timeDiff / (1000 * 3600 * 24));
 
-  if (daysToExpiry <= 30) {
-    return 40; // Category A
-  } else if (daysToExpiry <= 60) {
-    return 20; // Category B
-  } else {
-    return 10; // Category C
+  let discount = 0;
+
+  // Apply discount logic based on category and expiry date
+  if (category === "A") {
+    if (daysToExpiry <= 7) {
+      discount = 30; // Near expiry for Category A
+    } else if (daysToExpiry <= 30) {
+      discount = 10; // Early expiry for Category A
+    }
+  } else if (category === "B") {
+    if (daysToExpiry <= 7) {
+      discount = 40; // Near expiry for Category B
+    } else if (daysToExpiry <= 30) {
+      discount = 20; // Early expiry for Category B
+    }
+  } else if (category === "C") {
+    if (daysToExpiry <= 7) {
+      discount = 70; // Near expiry for Category C
+    } else if (daysToExpiry <= 30) {
+      discount = 50; // Early expiry for Category C
+    }
   }
+
+  return discount;
 };
 
 // Check if expiry is near (within 30 days)
@@ -90,6 +124,8 @@ app.put("/api/products/:id", async (req, res) => {
     const product = await Product.findById(id);
     product.stock = stock;
     product.discount = calculateDiscount(product);
+    product.category = getCategory(product); // Assign the category
+
     await product.save();
 
     // Send expiry email if near expiry
