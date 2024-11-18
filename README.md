@@ -11,22 +11,14 @@ Before running this app locally, ensure that you have the following software ins
 - **MongoDB Atlas account** (for database) or **MongoDB installed locally**
 - **Git**: [Download Git](https://git-scm.com/)
 
-### Steps to Run the Backend (Server)
 
 1. **Clone the Repository**
 
    Clone the project repository to your local machine using Git:
 
    ```bash
-   git clone https://github.com/your-username/SmartExpiryManagement.git
+   git clone https://github.com/rakshureddy1308/SmartExpiryManagement.git
    cd SmartExpiryManagement
-
-Install Backend Dependencies
-
-Navigate to the backend folder (or the root folder if the backend is there) and install the necessary dependencies:
-   ```bash
-   npm install
-
 
 
 
