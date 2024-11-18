@@ -69,4 +69,24 @@ Slow-Selling Products:
 Early expiry (within 1 month): Apply a moderate discount (30-40%).
 Very near expiry (1-2 weeks): Apply aggressive discounts (50-70%).
 
+### Example Scenario
+
+Below is an example scenario demonstrating the application of the ABC categorization and discounting logic for different products:
+
+| Product       | Category | Sales Velocity  | Discount (Near Expiry) | Discount (Critical Expiry) |
+|---------------|----------|-----------------|------------------------|----------------------------|
+| Fresh Milk    | A        | Fast-Selling    | 10%                    | 30%                        |
+| Bread         | B        | Moderate        | 20%                    | 40%                        |
+| Niche Snacks  | C        | Slow-Selling    | 40%                    | 70%                        |
+
+#### Explanation:
+- **Fresh Milk (Category A, Fast-Selling)**:
+  - Since Fresh Milk is a fast-selling product in Category A, it gets a minimal discount (10%) if nearing expiry (within 30 days), but if it's critically close to expiry (within 1-2 weeks), the discount increases to 30%.
+  
+- **Bread (Category B, Moderate Sales)**:
+  - Bread, in Category B with moderate sales, would get a moderate discount (20%) as expiry approaches within 30 days, and the discount increases to 40% if it's critically close to expiry.
+
+- **Niche Snacks (Category C, Slow-Selling)**:
+  - Niche Snacks, categorized as slow-selling products in Category C, are discounted more aggressively (40%) when near expiry (within 30 days), and the discount increases to 70% when it's critically near expiry.
+
 
