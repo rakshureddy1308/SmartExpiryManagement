@@ -25,8 +25,8 @@ Install Backend Dependencies
 
 Navigate to the backend folder (or the root folder if the backend is there) and install the necessary dependencies:
 
-     ```bash
-     npm install
+   ```bash
+   npm install
 
 Start the Backend Server
 
